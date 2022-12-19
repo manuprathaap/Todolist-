@@ -1,0 +1,56 @@
+body {
+    background-color: #E3F2FD;
+}
+
+.heading{
+    font-size:20px;
+    font-weight:600;
+    color:#3D5AFE;
+
+}
+
+  .line1{
+    color:#000;
+    font-size:12px;
+
+  }
+   .line2{
+    color:#000;
+    font-size:12px;
+    
+  }
+   .line3{
+    color:#000;
+    font-size:12px;
+    
+  }
+  #card1{
+    border-radius: 18px;
+    background-color: rgb(119, 243, 150,1);
+  }
+  #card2{
+    border-radius: 18px;
+    background-color: rgb(218, 226, 103);
+  }
+  .cards{
+
+    transition: all 0.2s ease;
+    cursor: pointer;
+    width: 400px;
+    border: 2px solid rgb(243, 234, 234);
+    border-radius: 18px;
+    background-color: rgb(66, 226, 106);
+    
+
+  }
+  #cardrow{
+    padding-left: 100px;
+  }
+    
+
+
+.cards:hover{
+
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    transform: scale(1.1);
+}

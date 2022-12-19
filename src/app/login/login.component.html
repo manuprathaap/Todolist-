@@ -1,0 +1,58 @@
+<body>
+    <div class="container">
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+            <h2 class="text-center text-dark mt-5">Login Form</h2>
+            <!-- <div class="text-center mb-5 text-dark">Made with bootstrap</div> -->
+            <div class="card my-5">
+    
+              <form  class="card-body cardbody-color p-lg-5" [formGroup]="loginForm">
+    
+                <!-- <div class="text-center">
+                  <img src="https://cdn.pixabay.com/photo/2016/03/31/19/56/avatar-1295397__340.png" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+                    width="200px" alt="profile">
+                </div> -->
+                
+                <!-- <div *ngIf="this.loginForm.get('acno')?.errors && this.loginForm.get('acno')?.touched"style="color: red;">Invalid User</div> -->
+               
+                <div class="mb-3">
+                  <input formControlName="uname" type="text" class="form-control" id="log_uname"  placeholder="User Name">
+                 <div *ngIf="this.loginForm.get('uname')?.errors && this.loginForm.get('uname')?.touched"style="color: red;">Invalid User</div>
+               
+                </div>
+                <div class="mb-3">
+                  <input formControlName="pswd" type="password" class="form-control" id="log_pswd" placeholder="password">
+                </div>
+                <div class="text-center"><button (click)="login()" type="submit" class="btn btn-color px-5 mb-5 w-100">Login</button></div>
+                <div id="emailHelp" class="form-text text-center mb-5 text-dark">Not Registered? <a href="register" class="text-dark fw-bold"> Create an Account</a>
+                </div>
+              </form>
+            </div>
+    
+          </div>
+        </div>
+      </div>
+</body>
+<!-- <body>
+    <div class="container  text-center mt-5" style="width:300px;" >
+        <form action=""[formGroup]="loginForm">
+        <div class="container bg-light p-5" id="border">
+            <img class ="image"src="\assets\images\download.jpg" alt="">
+            <h4>My Bank</h4>
+            <h6 >{{aim}}</h6>
+            <br>
+            
+            <div><input formControlName="acno" id="log_acno" class="container-fluid mt-3" type="text" [placeholder]="account"></div>
+            <div *ngIf="this.loginForm.get('acno')?.errors && this.loginForm.get('acno')?.touched"style="color: red;">Invalid User</div>
+            <div><input  formControlName="pswd" id="log_pswd" class="container-fluid mt-3" type="text" placeholder="Password"></div>
+            <div *ngIf="this.loginForm.get('pswd')?.errors && this.loginForm.get('pswd')?.touched"style="color: red;">Invalid password</div>
+            <div class="d-grid gap-2">
+                <input type="button" (click)="login()" value="Login" id="login" class="btn btn-primary mt-3">
+                <a href="signup">forgot password? <br> signup</a>
+            </div>
+        </div>
+    </form>
+
+
+    </div>
+</body> -->
