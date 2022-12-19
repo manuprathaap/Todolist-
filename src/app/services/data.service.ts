@@ -7,63 +7,63 @@ export class DataService {
 
   constructor() { }
 
-  // currentacno
-currentuname=''
+// currentacno
+currentphno=''
 
 // currentuser
 currentuser=''
 
 
 //saveDetails() - to store data into the local storage
-// saveDetails(){
-//   if(this.userDetails){
-//     localStorage.setItem('database',JSON.stringify(this.userDetails))
-//   }
-//   if(this.currentAcno){
-//     localStorage.setItem('currentAcno',JSON.stringify(this.currentAcno))
-//   }
-//   if(this.currentuser){
-//     localStorage.setItem('currentuser',JSON.stringify(this.currentuser))
-//   }
-// }
+saveDetails(){
+  if(this.userDetails){
+    localStorage.setItem('database',JSON.stringify(this.userDetails))
+  }
+  if(this.currentphno){
+    localStorage.setItem('currentAcno',JSON.stringify(this.currentphno))
+  }
+  if(this.currentuser){
+    localStorage.setItem('currentuser',JSON.stringify(this.currentuser))
+  }
+}
 
 
-// getDetails(){
-//   if(this.userDetails){
-//     this.userDetails=JSON.parse(localStorage.getItem('database')||'')
-//   }
-//   if(this.currentAcno){
-//     this.currentAcno=JSON.parse(localStorage.getItem('currentAcno')||'')
-//   }
-//   if(this.currentuser){
-//     this.currentuser=JSON.parse(localStorage.getItem('currentuser')||'')
-//   }
-// }
+getDetails(){
+  if(this.userDetails){
+    this.userDetails=JSON.parse(localStorage.getItem('database')||'')
+  }
+  if(this.currentphno){
+    this.currentphno=JSON.parse(localStorage.getItem('currentphno')||'')
+  }
+  if(this.currentuser){
+    this.currentuser=JSON.parse(localStorage.getItem('currentuser')||'')
+  }
+}
 
 
 
 
   userDetails:any={
-    1000:{username:'manu', email:'manu@2000', pswd:'1000'},
-    1001:{username:'anu', email:'anu@2000', pswd:'1001'},
-    1002:{username:'binu', email:'binu@2000', pswd:'1002'},
+    1000:{phno:9090,username:'manu',pswd:'1000',todo:[]},
+    1001:{phno:1001,username:'sayyid',pswd:'1001',todo:[]},
+    1002:{phno:1002,username:'abhi',pswd:'1002',todo:[]}
   }
   //////////////////////////
 
-  register(username:any,email:any,pswd:any){
+  register(phno:any,username:any,pswd:any){
     let userDetails=this.userDetails;
-    if(username in userDetails){
+    if(phno in userDetails){
       return false;
     }
     else{
-      userDetails[username]={
+      userDetails[phno]={
+        phno:phno,
         username:username,
-        email:email,
-        pswd:pswd
-        
+        pswd:pswd,
+         todo:[]
       }
       console.log(userDetails);
-      // this.saveDetails();
+      this.saveDetails();
       return true;
       
     }
@@ -71,12 +71,12 @@ currentuser=''
 
   ////////////////////////
 
-  login(username:any,pswd:any){
-    if(username in this.userDetails){
-      if(pswd==this.userDetails[username]['pswd']){
-        this.currentuser=this.userDetails[username]['email']
-        this.currentuname=username;
-        // this.saveDetails();
+  login(phno:any,pswd:any){
+    if(phno in this.userDetails){
+      if(pswd==this.userDetails[phno]['pswd']){
+        this.currentuser=this.userDetails[phno]['username']
+        this.currentphno=phno;
+        this.saveDetails();
         return true
       }
       else{
@@ -89,4 +89,39 @@ currentuser=''
     }
 
   }
+
+
+///////
+subtodo(phno:any,todo1:any,desc1:any)
+{
+  let userDetails=this.userDetails
+  // var amount=parseInt(amt)
+      // userDetails[phno]['balance']+=amount;
+      var todo=todo1 ;
+      var desc = desc1
+      if (phno in userDetails) {
+        userDetails[phno]['todo'].push({//push values to transaction array
+          Todo:todo,
+          Description:desc//the Type name and amount name is refered in *ngFor
+        })
+        
+
+      }
+
+      else{
+        alert('invalid fon number')
+        return false;
+      }
+      console.log(userDetails);//to check whether the data is disolaying
+      this.saveDetails();
+      return userDetails[phno]['todo']  
 }
+
+gettodo(phno:any){//acno arde ano ayalde acnt details kitnm
+
+  return  this.userDetails[phno]['todo']
+
+  }
+}
+  
+  

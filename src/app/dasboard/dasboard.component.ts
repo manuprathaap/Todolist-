@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-dasboard',
@@ -6,8 +9,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dasboard.component.css']
 })
 export class DasboardComponent implements OnInit {
+   //curent user
+   user=''
 
-  constructor() { }
+  constructor(private ds:DataService,private fb:FormBuilder,private router:Router) {
+    this.user=this.ds.currentuser;
+   }
+   logout(){
+    alert("clicked")
+    localStorage.removeItem('currentphno');
+    localStorage.removeItem('currentuser');
+    this.router.navigateByUrl('')
+  }
 
   ngOnInit(): void {
   }

@@ -10,7 +10,7 @@ import { DataService } from '../services/data.service';
 })
 export class LoginComponent implements OnInit {
   loginForm=this.fb.group({  
-    uname:['',[Validators.required,Validators.pattern('[a-zA-Z]*')]],
+    phno:['',[Validators.required,Validators.pattern('[0-9]*')]],
     pswd:['',[Validators.required,Validators.pattern('[0-9a-zA-Z]*')]]
   })
 
@@ -22,13 +22,13 @@ export class LoginComponent implements OnInit {
 
   login(){
     //alert login clicked
-    var uname=this.loginForm.value.uname;
+    var phno=this.loginForm.value.phno;
     var pswd=this.loginForm.value.pswd;
     var userDetails=this.ds.userDetails;
    
     if(this.loginForm.valid){
-      console.log(this.loginForm.get('uname')?.errors);
-       const result=this.ds.login(uname,pswd)
+      console.log(this.loginForm.get('phno')?.errors);
+       const result=this.ds.login(phno,pswd)
     if(result){
       alert("login successful")
       this.router.navigateByUrl('dashboard')

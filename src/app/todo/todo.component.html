@@ -1,0 +1,83 @@
+<div  class="container   ">
+    <img class="imgs" src="../../assets/Image/aa.png" width="200px" height="150px" alt="">
+    <ul class="nav justify-content-end  ">
+        <!-- <li class="nav-item">
+            <a class="nav-link active" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Batches</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#">Assignments</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link " href="#">Attendace</a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link " href="#" (click)="home()">Home</a>
+            </li>
+    </ul>
+</div>
+<div class="child" >
+            
+    <!-- <div class="main">
+        <div id="img2" class="img">
+            <img id="img1" src="../../assets/Image/aa.png" alt="">
+        </div>
+        <div class="head">
+            <h3>DEPOSIT MONEY</h3>
+        </div> -->
+        <form action="" [formGroup]="depositForm">
+            <!-- <div class="form">
+                
+                <input  formControlName="acno" type="input"  placeholder="Account Number" name="name" id='s_accnt1' required /> <br>
+                <div  style="color: red; margin-left:60px; text-decoration: underline; "   *ngIf="this.depositForm.get('acno')?.errors && this.depositForm.get('acno')?.touched">
+                    invalid acno
+                </div>
+                <input  formControlName="pswd" type="input"  placeholder="Password" name="name4" id='s_pass1' required />
+                <div  style="color: red; margin-left:60px; text-decoration: underline; "   *ngIf="this.depositForm.get('pswd')?.errors && this.depositForm.get('pswd')?.touched">
+                    invalid pswd
+                </div>
+                <input  formControlName="amount" type="text" name="amount" id="s_usn1" placeholder="Amount">
+                <div  style="color: red; margin-left:60px; text-decoration: underline; "   *ngIf="this.depositForm.get('amount')?.errors && this.depositForm.get('amount')?.touched">
+                    invalid amount
+                </div>
+                
+                <br>
+                <input id="button" type="button" value="Deposit" (click)="deposit()" class="btn btn-primary">
+    
+    
+              </div> -->
+              <div id="page" class="page">
+                <div class="field field_v2">
+                    <label for="last-name" class="ha-screen-reader">Please enter phone number</label>
+                    <input formControlName="phno" id="last-name"  class="field__input" placeholder="e.g. 9497131419">
+                    <span class="field__label-wrap" aria-hidden="true">
+                      <span class="field__label">Phone Number</span>
+                    </span>
+                  </div> 
+                <div class="field field_v1">
+                  <label for="first-name" class="ha-screen-reader">Task name</label>
+                  <input formControlName="todo" id="first-name" class="field__input" placeholder="e.g. Go to gym">
+                  <span class="field__label-wrap" aria-hidden="true">
+                    <span class="field__label">Task name</span>
+                  </span>
+                </div>
+                <div class="field field_v2">
+                  <label for="last-name" class="ha-screen-reader">Last name</label>
+                  <input formControlName="desc" id="last-name"  class="field__input" placeholder="e.g. Going to gym can improve my health">
+                  <span class="field__label-wrap" aria-hidden="true">
+                    <span class="field__label">Description</span>
+                  </span>
+                </div>  
+                <div class="d-grid mb-2">
+                    <button id="btn" class="btn btn-lg btn-primary btn-login fw-bold text-uppercase mt-5" (click)="subb()"  type="submit">Submit Todo</button>
+                  </div>  
+              </div>
+        </form>
+ 
+          
+    </div>

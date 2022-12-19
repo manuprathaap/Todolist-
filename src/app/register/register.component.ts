@@ -9,9 +9,12 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  uname=''
+  phno=''
+  pswd=''
   registerForm=this.fb.group({  
     uname:['',[Validators.required,Validators.pattern('[a-zA-Z]*')]],
-    email:['',[Validators.required,Validators.pattern('[a-zA-Z]*')]],
+    phno:['',[Validators.required,Validators.pattern('[0-9]*')]],
     pswd:['',[Validators.required,Validators.pattern('[0-9a-zA-Z]*')]],
   })
   constructor(private ds:DataService, private router:Router,private fb:FormBuilder) { }
@@ -23,12 +26,12 @@ export class RegisterComponent implements OnInit {
     console.log('registerForm');
     
     var uname=this.registerForm.value.uname;
-    var email=this.registerForm.value.email;
+    var phno=this.registerForm.value.phno;
     var pswd=this.registerForm.value.pswd;
     if(this.registerForm.valid){
       // console.log(this.registerForm.get('uname')?.errors);
       
-    const result=this.ds.register(uname,email,pswd);
+    const result=this.ds.register(phno,uname,pswd);
     
     if (result) {
         alert('register successfull')

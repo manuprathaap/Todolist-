@@ -1,6 +1,15 @@
 <body>
+    <div  class="container   ">
+        <!-- <img class="imgs" src="../../assets/Image/aa.png" width="200px" height="150px" alt=""> -->
+        <ul class="nav justify-content-end  ">
+           
+                <li class="nav-item">
+                  <a class="nav-link " href="#" (click)="logout()">Logout</a>
+                </li>
+        </ul>
+    </div>
     <div class="main text-center mt-5">
-         <h6 class="heading">Welcome User</h6>
+         <h6 class="heading">Welcome :{{user}}</h6>
         </div>
                            
         <div  class=" container d-flex justify-content-center">
@@ -15,7 +24,9 @@
                     <img width="100px" src="https://img.icons8.com/external-anggara-detail-outline-anggara-putra/512/external-checklist-file-and-document-anggara-detail-outline-anggara-putra-5.png" />
 
                     <h5>TO DO LIST</h5>
-                <p class="line1"> <a href="./reg.html">Tap To Add</a></p>
+                    <!-- <a class="line1" href="#">Tap to veiw <i class="fas fa-arrow-right"></i></a> -->
+                <!-- <p class="line1"> <a href="./todo.html" routerLink="todo">Tap To Add</a></p> -->
+                <a class="line1" routerLink="/todo" id="th">Tap To Add</a>   
                     
                 </div>
 
@@ -32,7 +43,8 @@
             <div class=" third  p-4 text-center" id="card2">
                      <img width="100px" src="https://img.icons8.com/ios/512/mark-view-as-non-hidden.png"/>
                     <h5>VIEW</h5>
-                    <p class="line3"><a href="./reg.html">Tap To View </a></p>
+                    <!-- <p class="line3"><a href="./reg.html">Tap To View </a></p> -->
+                    <a class="line3" routerLink="/view" id="th">Tap To View</a>   
                 </div>
                 </div>
                

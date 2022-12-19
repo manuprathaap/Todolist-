@@ -1,0 +1,28 @@
+<div  class="container   ">
+    <img class="imgs" src="../../assets/Image/aa.png" width="200px" height="150px" alt="">
+    <ul class="nav justify-content-end  ">
+            <li class="nav-item">
+              <a class="nav-link " href="#" (click)="home()">Home</a>
+            </li>
+    </ul>
+</div>
+<div class="container">
+	<table>
+        <thead>
+            <tr >
+                <th>Todo</th>
+                <th>Description</th>
+                <th>Click if task completed</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let t of todo">
+                <th>{{t.Todo}}</th>
+                <th>{{t.Description}}</th>
+                <th><button id="1" class="btn" (click)="submit()">Click me</button></th>
+                <!-- where amount adn Type is trasaction array inside amount and Type ie the name   -->
+            </tr>
+        </tbody>
+	</table>
+    
+</div>
